@@ -170,11 +170,8 @@ static const Key keys[] = {
     {0, XF86XK_MonBrightnessUp, spawn, {.v = light_up}},
     {0, XF86XK_MonBrightnessDown, spawn, {.v = light_down}},
 
-    // screenshot fullscreen and cropped
-    {MODKEY | ControlMask, XK_u, spawn,
-     SHCMD("maim | xclip -selection clipboard -t image/png")},
-    {MODKEY, XK_u, spawn,
-     SHCMD("maim --select | xclip -selection clipboard -t image/png")},
+    // screenshot
+    {MODKEY | ControlMask, XK_Print, spawn, SHCMD("xfce4-screenshooter")},
 
     {MODKEY, XK_a, spawn, SHCMD("rofi -show drun")},
     {MODKEY, XK_t, spawn, SHCMD("xfce4-terminal")},
