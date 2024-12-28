@@ -177,7 +177,7 @@ static const Key keys[] = {
     {MODKEY, XK_t, spawn, SHCMD("xfce4-terminal")},
     {MODKEY, XK_b, spawn, SHCMD("firefox")},
     {MODKEY, XK_e, spawn, SHCMD("thunar")},
-    {MODKEY, XK_p, spawn, SHCMD("keepass-xc")},
+    {MODKEY, XK_p, spawn, SHCMD("keepassxc")},
 
     // toggle stuff
     {MODKEY, XK_n, togglebar, {0}},
@@ -293,11 +293,12 @@ static const Button buttons[] = {
      * if you want to control these separately (i.e. to retain the feature to
      * move a tiled window into a floating position).
      */
-    {ClkClientWin, MODKEY, Button1, moveorplace, {.i = 0}},
-    {ClkClientWin, MODKEY, Button2, togglefloating, {0}},
-    {ClkClientWin, MODKEY, Button3, resizemouse, {0}},
-    {ClkClientWin, ControlMask, Button1, dragmfact, {0}},
-    {ClkClientWin, ControlMask, Button3, dragcfact, {0}},
+    /*{ClkClientWin, MODKEY, Button1, moveorplace, {.i = 0}},*/
+    /*{ClkClientWin, MODKEY, Button2, togglefloating, {0}},*/
+    /*{ClkClientWin, MODKEY, Button3, resizemouse, {0}},*/
+    // ClkClientWin with MODKEY now resizes windows instead of with ControlMask
+    {ClkClientWin, MODKEY, Button1, dragmfact, {0}},
+    {ClkClientWin, MODKEY, Button3, dragcfact, {0}},
     {ClkTagBar, 0, Button1, view, {0}},
     {ClkTagBar, 0, Button3, toggleview, {0}},
     {ClkTagBar, MODKEY, Button1, tag, {0}},
